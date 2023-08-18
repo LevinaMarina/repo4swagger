@@ -156,6 +156,22 @@ components:
             type: string
             example: "7"
             description: возврат слепого перевода. При неответе адресата перевода (консультанта), клиент (переводимый абонент) перезванивает исходному оператору (инициатору перевода). При слепом переводе из консультативного вызова (консультант ответил и оператор положил трубку), новый вызов не создается, а будет второе "Connected" событие с подменой звонящего абонента. При этом тип перевода меняется с consultative на blind
+    
+
+
+    EventsSmsBodyAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/EventsSmsBody" 
     EventsSmsBody:
       type: object
       properties:
@@ -172,6 +188,23 @@ components:
           type: string
           example: "1000"
           description: результат отправки SMS (см. "Список кодов результатов", коды 43хх)
+    
+
+
+    CommandsCallbackAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/CommandsCallback"   
+   
     CommandsCallback:
       type: object
       properties:
@@ -223,6 +256,22 @@ components:
           type: string
           example: "cbk1"
           description: "номер вызываемого абонента (строка не более 128 байт). Может быть идентификатором сотрудника ВАТС, внутренним номером группы операторов ВАТС или любым другим номером. К номеру будут применены правила преобразования номеров ВАТС"
+    
+    
+    CommandsCallback_groupAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/CommandsCallback_group"   
+    
     CommandsCallback_group:
       type: object
       properties:
@@ -259,6 +308,23 @@ components:
             - '3100'
             - '4300'
             - '5xxx'
+    
+    
+
+    CommandssmsAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/Commandssms"   
+    
     Commandssms:
       type: object
 
@@ -300,6 +366,23 @@ components:
             - '3100'
             - '4001'
             - '5xxx'
+    
+    
+
+    CommandRecordingStartAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/CommandRecordingStart"   
+
     CommandRecordingStart:
       type: object
       properties:
@@ -332,6 +415,23 @@ components:
             - '4001'
             - '41хх'
             - '5xxx'      
+    
+    
+    
+    CommandPlayStartAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/CommandPlayStartStart"   
+
     CommandPlayStart:
       type: object
       properties:
@@ -368,6 +468,35 @@ components:
             - '41хх'
             - '5xxx'       
  
+
+
+    forwarding_numbersAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/forwarding_numbers"   
+        
+
+    forwarding_numbers:    
+      type: object
+      properties:
+          limit:
+            type: integer
+            example: "cbk1"
+            description: "Количество переадресаций в ответе (максимальное значение - 1000), значение по умолчанию – 1000"
+
+          offset:
+            type: integer
+            description: "Смещение начала выборки, значение по умолчанию - 0"
+
     forwarding_numbersResponses:
       required:
         - data
@@ -468,12 +597,4 @@ components:
           example: 15
           description: "Время ожидания ответа абонента (в секундах) при переадресации на внешний номер"
 
-  parameters:
-    vpbx_api_key:
-      type: string
-      example: "1234567890qwerty"
-      description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-    sign:
-      type: string
-      example: "1234567890qwerty"
-      description: "sign рассчитывается по формуле"
+

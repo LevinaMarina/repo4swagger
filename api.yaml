@@ -105,25 +105,11 @@ paths:
           14.  **task_id** - опционально, идентификатор задачи исходящего обзвона, в результате которой появился вызов. Передается в случае, если звонок инициирован или ObDial, или CallbackWidget, или MissGroupСallCallback. В остальных случаях отсутствует;
         
           15.  **callback_initiator** - _string_  инициатор обратного звонка, в результате которого появился вызов (строка не более 128 байт). Передается, если звонок - callback. При обычном звонке отсутствует
-        
+  
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
-                json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsCallReqBodyAll"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsCallReqBodyAll"
       responses:
         '200':
           description: successful operation
@@ -156,21 +142,7 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
-                json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsSmsBody"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsSmsBodyAll"
       responses:
         '200':
           description: successful operation
@@ -219,21 +191,7 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
-                json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallback"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallbackAll"
       responses:
         '200':
           description: |
@@ -295,24 +253,7 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-                - from
-                - to
-                - line_number
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
-                json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallback_group"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallback_groupAll"
                   
       responses:
         '200':
@@ -390,16 +331,7 @@ paths:
                 - from_extension
               type: object
               properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
-                json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/Commandssms"
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandssmsAll"
                   
       responses:
         '200':
@@ -450,22 +382,7 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-                - call_id
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
-                json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandRecordingStart"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandRecordingStartAll"
 
       responses:
         '200':
@@ -542,24 +459,7 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-                - command_id
-                - call_id
-                - internal_id
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
-                json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandPlayStart"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandPlayStartAll"
       responses:
         '200':
           description: |
@@ -611,19 +511,7 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/forwarding_numbersAll"
       
       responses:
         '200':
@@ -693,19 +581,7 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-              type: object
-              properties:
-                vpbx_api_key:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
-                sign:
-                  type: string
-                  example: "1234567890qwerty"
-                  description: "sign рассчитывается по формуле"
+              $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/forwarding_numbersAll"
       responses:
         '200':
           description: Successful operation
