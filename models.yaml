@@ -1,6 +1,20 @@
 components:
   schemas:
-  
+
+    EventsCallReqBodyAll:
+      type: object
+      properties:
+        vpbx_api_key:
+          type: string
+          example: "1234567890qwerty"
+          description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+        sign:
+          type: string
+          example: "1234567890qwerty"
+          description: "sign рассчитывается по формуле"
+        json:
+          $ref: "#/components/schemas/EventsCallReqBody"
+
     EventsCallReqBody:
       type: object
       properties:
@@ -453,3 +467,13 @@ components:
           type: integer
           example: 15
           description: "Время ожидания ответа абонента (в секундах) при переадресации на внешний номер"
+
+  parameters:
+    vpbx_api_key:
+      type: string
+      example: "1234567890qwerty"
+      description: "Уникальный код вашей ВАТС. Это обязательный элемент запроса, по которогому ВАТС определяет внешнюю систему, от корой отправлен запрос"
+    sign:
+      type: string
+      example: "1234567890qwerty"
+      description: "sign рассчитывается по формуле"

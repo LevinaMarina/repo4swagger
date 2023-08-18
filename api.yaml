@@ -123,7 +123,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsCallReqBody"
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsCallReqBodyAll"
       responses:
         '200':
           description: successful operation
