@@ -123,7 +123,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: 'models.yaml#/components/schemas/EventsCallReqBody'
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsCallReqBody"
       responses:
         '200':
           description: successful operation
@@ -170,7 +170,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: 'models.yaml#/components/schemas/EventsSmsBody'
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/EventsSmsBody"
       responses:
         '200':
           description: successful operation
@@ -233,7 +233,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: 'models.yaml#/components/schemas/CommandsCallback'
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallback"
       responses:
         '200':
           description: |
@@ -242,7 +242,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'models.yaml#/components/schemas/CommandsCallbackResponses'
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallbackResponses"
         '400':
           description: |
             Команда не выполнена. Возможные ошибки:
@@ -312,7 +312,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: 'models.yaml#/components/schemas/CommandsCallback_group'
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallback_group"
                   
       responses:
         '200':
@@ -322,7 +322,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'models.yaml#/components/schemas/CommandsCallback_groupResponses'
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandsCallback_groupResponses"
         '4XX':
           description: |
             Команда не выполнена. Возможные ошибки:
@@ -378,7 +378,9 @@ paths:
         
             * если у клиента в ЛК доступно к выбору только имя по умолчанию, допускается в данном поле передать только имя по умолчанию;
             * если у клиента в ЛК доступно к выбору имя по умолчанию либо отраслевое, допускается в данном поле передать имя по умолчанию либо любое доступное отраслевое имя; 
-            * если у клиента в ЛК доступно к выбору имя по умолчанию, либо отраслевое имя, либо подтвержденное уникальное имя, то допускается в данном поле передать имя по умолчанию либо любое доступное отраслевое имя, либо уникальное имя.
+            * если у клиента в ЛК доступно к выбору имя по умолчанию, либо отраслевое имя, либо подтвержденное уникальное имя, 
+            то допускается в данном поле передать имя по умолчанию либо любое доступное отраслевое имя, либо уникальное имя.
+       
         content:
           application/json:
             schema:
@@ -397,7 +399,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: 'models.yaml#/components/schemas/Commandssms'
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/Commandssms"
                   
       responses:
         '200':
@@ -407,7 +409,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'models.yaml#/components/schemas/CommandssmsResponses'
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandssmsResponses"
         '4XX':
           description: |
             Команда не выполнена. Возможные ошибки:
@@ -463,7 +465,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: 'models.yaml#/components/schemas/CommandRecordingStart'
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandRecordingStart"
 
       responses:
         '200':
@@ -473,7 +475,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'models.yaml#/components/schemas/CommandRecordingResponses'
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandRecordingResponses"
         '4XX':
           description: |
             Команда не выполнена. Возможные ошибки:
@@ -557,7 +559,7 @@ paths:
                   example: "1234567890qwerty"
                   description: "sign рассчитывается по формуле"
                 json:
-                  $ref: 'models.yaml#/components/schemas/CommandPlayStart'
+                  $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandPlayStart"
       responses:
         '200':
           description: |
@@ -566,7 +568,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'models.yaml#/components/schemas/CommandPlayStartResponses'
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandPlayStartResponses"
         '4XX':
           description: |
             Команда не выполнена. Возможные ошибки:
@@ -576,18 +578,10 @@ paths:
               * '4001' - Команда не поддерживается 
               * '41хх' - Выполнить команду по логике работы ВАТС невозможно 
               * '5ххх' - Ошибка сервера          
+    
                 
                 
-                
-  /vpbx/result/callback:
-    post:
-      tags:
-        - API Команды
-      summary: "Уведомление о результате обработки команды наинициирование вызова от имени сотрудника"
-      description: "Уведомление о результате обработки команды передается к внешеней системе в ответ на команду /vpbx/commands/callback"
-      responses:
-        '200':
-          description: successful operation
+
   /vpbx/forwarding/numbers/:
     post:
       tags:
@@ -639,7 +633,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'models.yaml#/components/schemas/forwarding_numbersResponses'
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/forwarding_numbersResponses"
         '4XX':
           description: |
             Команда не выполнена. Возможные ошибки:
@@ -718,7 +712,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: 'models.yaml#/components/schemas/forwarding_numbersResponses'
+                $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/forwarding_numbersResponses"
 
 
 
