@@ -713,7 +713,3 @@ paths:
             application/json:
               schema:
                 $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/forwarding_numbersResponses"
-
-
-
-
