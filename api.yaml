@@ -16,7 +16,7 @@ tags:
   - name: Правила переадресации
     description: Для работы со списком переадресации в ЛК ВАТС из внешней системы. Каждый из методов этой группы журналируется в ЛК
 paths:
-  /vpbx/events/call: #Уведомление о вызове
+  /vpbx/events/call: # Уведомление о вызове
     post:
       tags:
         - API Realtime
@@ -113,7 +113,7 @@ paths:
       responses:
         '200':
           description: successful operation
-  /vpbx/event/sms: #Уведомление о результате отправки SMS
+  /vpbx/event/sms: # Уведомление о результате отправки SMS
     post:
       tags:
           - API Realtime
@@ -146,7 +146,7 @@ paths:
       responses:
         '200':
           description: successful operation
-  /vpbx/commands/callback: #Инициирование вызова от имени сотрудника
+  /vpbx/commands/callback: # Инициирование вызова от имени сотрудника
     post:
       tags:
         - API Команды
@@ -213,7 +213,7 @@ paths:
             
               * '5ххх' - Ошибка сервера        
                 
-  /vpbx/commands/callback_group: #Инициирование вызова от имени группы
+  /vpbx/commands/callback_group: # Инициирование вызова от имени группы
     post:
       tags:
         - API Команды
@@ -276,7 +276,7 @@ paths:
             
               * '5ххх' - Ошибка сервера
 
-  /vpbx/commands/sms: #Отправка SMS
+  /vpbx/commands/sms: # Отправка SMS
     post:
       tags:
         - API Команды
@@ -348,7 +348,7 @@ paths:
             
               * '5ххх' - Ошибка сервера
 
-  /vpbx/commands/recording/start: #Включение записи разговора
+  /vpbx/commands/recording/start: # Включение записи разговора
     post:
       tags:
         - API Команды
@@ -397,7 +397,7 @@ paths:
               * '41хх' - Выполнить команду по логике работы ВАТС невозможно 
               * '5ххх' - Ошибка сервера
                 
-  /vpbx/commands/play/start: #Включение воспроизведения звукового файла
+  /vpbx/commands/play/start: # Включение воспроизведения звукового файла
      post:
       tags:
         - API Команды
@@ -476,7 +476,7 @@ paths:
                
                 
 
-  /vpbx/forwarding/numbers/: #Получить список правил переадресации
+  /vpbx/forwarding/numbers/: # Получить список правил переадресации
     post:
       tags:
         - Правила переадресации
@@ -524,7 +524,7 @@ paths:
               * '5XXX' - Исключение
           
 
-  /vpbx/forwarding/number/add: #Добавление нового правила переадресации
+  /vpbx/forwarding/number/add: # Добавление нового правила переадресации
     post:
       tags:
         - Правила переадресации
