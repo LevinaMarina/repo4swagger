@@ -16,7 +16,7 @@ tags:
   - name: Правила переадресации
     description: Для работы со списком переадресации в ЛК ВАТС из внешней системы. Каждый из методов этой группы журналируется в ЛК
 paths:
-  /vpbx/events/call:
+  /vpbx/events/call: #Уведомление о вызове
     post:
       tags:
         - API Realtime
@@ -113,7 +113,7 @@ paths:
       responses:
         '200':
           description: successful operation
-  /vpbx/event/sms:
+  /vpbx/event/sms: #Уведомление о результате отправки SMS
     post:
       tags:
           - API Realtime
@@ -146,7 +146,7 @@ paths:
       responses:
         '200':
           description: successful operation
-  /vpbx/commands/callback:
+  /vpbx/commands/callback: #Инициирование вызова от имени сотрудника
     post:
       tags:
         - API Команды
@@ -213,7 +213,7 @@ paths:
             
               * '5ххх' - Ошибка сервера        
                 
-  /vpbx/commands/callback_group:
+  /vpbx/commands/callback_group: #Инициирование вызова от имени группы
     post:
       tags:
         - API Команды
@@ -276,7 +276,7 @@ paths:
             
               * '5ххх' - Ошибка сервера
 
-  /vpbx/commands/sms:
+  /vpbx/commands/sms: #Отправка SMS
     post:
       tags:
         - API Команды
@@ -325,12 +325,6 @@ paths:
         content:
           application/json:
             schema:
-              required:
-                - vpbx_api_key
-                - sign
-                - from_extension
-              type: object
-              properties:
                 $ref: "https://raw.githubusercontent.com/LevinaMarina/repo4swagger/master/models.yaml#/components/schemas/CommandssmsAll"
                   
       responses:
@@ -354,7 +348,7 @@ paths:
             
               * '5ххх' - Ошибка сервера
 
-  /vpbx/commands/recording/start:
+  /vpbx/commands/recording/start: #Включение записи разговора
     post:
       tags:
         - API Команды
@@ -403,7 +397,7 @@ paths:
               * '41хх' - Выполнить команду по логике работы ВАТС невозможно 
               * '5ххх' - Ошибка сервера
                 
-  /vpbx/commands/play/start:
+  /vpbx/commands/play/start: #Включение воспроизведения звукового файла
      post:
       tags:
         - API Команды
@@ -479,10 +473,10 @@ paths:
               * '41хх' - Выполнить команду по логике работы ВАТС невозможно 
               * '5ххх' - Ошибка сервера          
     
-                
+               
                 
 
-  /vpbx/forwarding/numbers/:
+  /vpbx/forwarding/numbers/: #Получить список правил переадресации
     post:
       tags:
         - Правила переадресации
@@ -530,7 +524,7 @@ paths:
               * '5XXX' - Исключение
           
 
-  /vpbx/forwarding/number/add:
+  /vpbx/forwarding/number/add: #Добавление нового правила переадресации
     post:
       tags:
         - Правила переадресации
